@@ -124,15 +124,7 @@ poc/
 The `@poc/lib` module exports a `PatternFlyTable` component with data fetching capabilities and fixed columns:
 
 ```typescript
-interface TableColumn {
-  title: string;
-  key: string;
-  width?: number;
-  sortable?: boolean;
-}
-
 interface PatternFlyTableProps {
-  columns: TableColumn[];
   dataFetcher: () => Promise<Array<Record<string, any>>>;
   className?: string;
   onRowClick?: (event: React.MouseEvent, rowIndex: number, row: Record<string, any>) => void;
@@ -146,12 +138,6 @@ interface PatternFlyTableProps {
 
 ```tsx
 import { PatternFlyTable, TableColumn } from '@poc/lib'
-
-const columns: TableColumn[] = [
-  { title: 'Name', key: 'name', width: 30 },
-  { title: 'Email', key: 'email', width: 40 },
-  { title: 'Role', key: 'role', width: 30 }
-]
 
 const fetchData = async () => {
   // Simulate API call
@@ -170,7 +156,6 @@ function MyComponent() {
     <div>
       <button onClick={handleRefresh}>Refresh Data</button>
       <PatternFlyTable
-        columns={columns}
         dataFetcher={fetchData}
         refreshTrigger={refreshTrigger}
         onRowClick={(event, rowIndex, row) => {
@@ -185,7 +170,6 @@ function MyComponent() {
 ### Key Features
 
 - **Data Fetching**: Asynchronous data loading with built-in loading states
-- **Fixed Columns**: Column definitions with width and sorting options
 - **Error Handling**: Built-in error states and display
 - **Refresh Capability**: Trigger data refresh with `refreshTrigger` prop
 - **Loading States**: Automatic loading indicators during data fetching
