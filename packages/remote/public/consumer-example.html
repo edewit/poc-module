@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatternFly Table Consumer Example</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@patternfly/react-core@5.0.0/dist/js/patternfly-react-core.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // This is a simple example of how to consume the federated module
+      // In a real application, you would use webpack Module Federation
+      console.log('This page demonstrates how to consume the PatternFly Table federated module');
+      console.log('The remote module is available at: http://localhost:3001/remoteEntry.js');
+      console.log('Component path: remote/PatternFlyTable');
+    </script>
+  </body>
+</html>
